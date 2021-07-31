@@ -143,6 +143,7 @@
   }
   .page-home .review {
     margin-top: 13px;
+    max-width: 285px;
   }
   .page-home .review .rating {
     height: 22px;
