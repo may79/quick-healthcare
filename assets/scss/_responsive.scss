@@ -1,0 +1,49 @@
+:root {
+  --app-height: 100%;
+}
+@media (max-width: 992px) {
+  html {
+    height: -webkit-fill-available;
+  }
+  html,
+  body {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  body {
+    min-height: 100vh;
+    min-height: var(--app-height);
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    padding: 15px;
+    h1 {
+      font-size: 14px;
+      line-height: 140%;
+      border-top: 0px;
+      padding-top: 0px;
+      margin-top: 8px;
+      padding-bottom: 4px;
+      span {
+        display: initial;
+      }
+    }
+    cite {
+      display: none;
+    }
+  }
+  .logo .logo-img{
+    width: 194px;
+    height: 30px;
+    background: url('/assets/img/logo-small.png') no-repeat center center;
+  }
+  .logo-desc {
+    font-size: 10px;
+    line-height: 109.4%;
+  }
+  main {
+    padding: 28px 15px 18px 15px;
+  }
+}

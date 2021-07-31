@@ -1,0 +1,163 @@
+.page-home {
+  .with-number {
+    position: relative;
+    &:before {
+      position: absolute;
+      left: -58px;
+      top: calc(50% - 10px);
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 41px;
+      color: #0c4569;
+    }
+    &:first-child:before {
+      content: '1';
+    }
+    &:nth-child(2):before {
+      content: '2';
+    }
+    &:nth-child(3):before {
+      content: '3';
+      top: calc(50% - 20px);
+    }
+  }
+  .button-row {
+    margin-top: 79px;
+  }
+  .text-disabled {
+    margin-top: 37px;
+    display: inline-block;
+  }
+  .review {
+    margin-top: 70px;
+    max-width: 560px;
+    p {
+      text-align: center;
+      letter-spacing: -0.02em;
+      color: #000;
+    }
+    .rating {
+      margin-top: 8px;
+      i {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url('/assets/img/star.png') no-repeat center center;
+      }
+    }
+    .author {
+      margin-top: 12px;
+    }
+  }
+  .vendors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 54px;
+    .accredited-business {
+      margin-left: 36px;
+      margin-right: 29px;
+    }
+  }
+
+  form {
+    position: relative;
+  }
+  .comment-box {
+    position: absolute;
+    left: calc(100% - 24px);
+    top: -67px;
+    .comment {
+      background: #ffffff;
+      border: 3px solid #b5121a;
+      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+      transform: rotate(-6.83deg);
+      width: 214px;
+      height: 113px;
+      border-radius: 50%;
+
+      font-family: 'Shadows Into Light Two', cursive;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 134.62%;
+      text-align: center;
+      letter-spacing: 0.075em;
+      color: #b5121a;
+
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .arrow {
+      background: url('/assets/img/arrow.svg') no-repeat;
+      width: 46px;
+      height: 51px;
+      position: absolute;
+      left: 19px;
+      bottom: -29px;
+    }
+    .content {
+      border: 0.5px solid transparent;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .page-home {
+    .button-row {
+      margin-top: 25px;
+    }
+    .text-disabled {
+      margin-top: 19px;
+      padding: 2px 0 2px 15px;
+      background: url('/assets/img/lock.png') no-repeat left 1px;
+      strong {
+        font-style: normal !important;
+      }
+    }
+    .review {
+      margin-top: 13px;
+      .rating {
+        height: 22px;
+        i {
+          width: 18px;
+          height: 22px;
+        }
+      }
+      .author {
+        margin-top: 0px;
+        font-size: 11px;
+        line-height: 156.9%;
+        letter-spacing: -0.02em;
+      }
+    }
+    .vendors {
+      margin-top: 17px;
+    }
+    .comment-box {
+      left: initial;
+      right: 0;
+      top: -38px;
+      .comment {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 28px;
+        width: 142px;
+        height: 43px;
+        transform: none;
+        font-size: 13px;
+        line-height: 108.12%;
+        font-weight: bold;
+      }
+
+      .arrow {
+        background: url('/assets/img/arrow-mobile.svg') no-repeat;
+        height: 46px;
+        left: initial;
+        right: -28px;
+        bottom: -27px;
+      }
+    }
+  }
+}

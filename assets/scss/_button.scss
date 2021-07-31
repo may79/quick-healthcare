@@ -1,0 +1,51 @@
+button, [role="button"], [type="button"] {
+  cursor: pointer;
+}
+
+.btn {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 60px;
+}
+.btn-primary {
+  height: 44px;
+  background: #0C4569;
+  border: 1px solid white;
+  width: 100%;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 21px;
+  color: white;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 2px solid #0C4569;
+    border-radius: 60px;
+    z-index: 1;
+  }
+}
+.icon-play {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background: #B5121A;
+  border: 1px solid #FFFFFF;
+  position: absolute;
+  border-radius: 50%;
+  right: -1px;
+  top: -1px;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 13px;
+    border: 8px solid transparent;
+    border-left-color: white;
+    border-right-width: 0;
+    border-left-width: 11px;
+  }
+}
