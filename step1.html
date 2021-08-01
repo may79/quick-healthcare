@@ -99,11 +99,6 @@
           type="hidden"
           value=""
         />
-        <input
-          type="hidden"
-          id="leadid_tcpa_disclosure"
-          checked="checked"
-        />
         <div class="button-row">
           <button type="submit" id="btn_submit" class="btn btn-primary">
             Get My Quotes!
@@ -111,7 +106,12 @@
           </button>
         </div>
 
-        <div class="text-summary">
+        <label class="text-summary" for="leadid_tcpa_disclosure" id="leadid_tcpa_disclosure_text">
+          <input
+            type="hidden"
+            id="leadid_tcpa_disclosure"
+            checked="checked"
+          />
           By clicking “Get My Quotes!” and seeking an insurance quote, I provide
           my signature and expressly consent to receive marketing phone calls
           and communications via automated telephone dialing system,
@@ -130,7 +130,7 @@
           insurance plans. Agents are not connected with or endorsed by the U.S.
           government or the federal Medicare program. One of these parties may
           handle your health insurance case.
-        </div>
+        </label>
       </form>
     </main>
 
@@ -183,7 +183,7 @@
         formData.trustedFormCertUrl = formData.xxTrustedFormCertUrl;
         formData.userAgent = navigator.userAgent;
         formData.medicareType = 'Rubber';
-        formData.tcpaDisclosure = 'jornaya';
+        formData.tcpaDisclosure = $('#leadid_tcpa_disclosure_text').text();
 
         $('#btn_submit').attr('disabled', 'disabled')
         axios

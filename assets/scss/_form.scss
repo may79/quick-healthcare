@@ -2,17 +2,18 @@ form {
   max-width: 421px;
   margin-left: auto;
   margin-right: auto;
+  label {
+    display: block;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 7px;
+  }
 }
-label {
-  display: block;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: #000000;
-  margin-bottom: 7px;
-}
+
 input.form-control {
   outline: none;
   display: block;

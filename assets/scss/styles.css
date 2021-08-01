@@ -107,7 +107,7 @@ form {
   margin-right: auto;
 }
 
-label {
+form label {
   display: block;
   font-weight: 500;
   font-size: 12px;
