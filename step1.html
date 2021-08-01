@@ -77,7 +77,7 @@
           <input
             type="email"
             class="form-control"
-            name="emailAddress"
+            name="email"
             placeholder="Email Address"
             required
           />
@@ -98,6 +98,11 @@
           name="universal_leadid"
           type="hidden"
           value=""
+        />
+        <input
+          type="hidden"
+          id="leadid_tcpa_disclosure"
+          checked="checked"
         />
         <div class="button-row">
           <button type="submit" id="btn_submit" class="btn btn-primary">
@@ -168,6 +173,7 @@
           day: 20,
           url: 'https://quickmedigap.com',
           landingUrl: 'https://quickmedigap.com/forms/may-form-1',
+          address: '123 Not Provided Way',
         }
         for (let item of arrValues) {
           formData[item.name] = item.value
