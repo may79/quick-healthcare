@@ -1,0 +1,15 @@
+.text-summary {
+  font-family: Roboto;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 160%;
+  color: #979797;
+  margin-top: 50px;
+}
+
+@media (max-width: 992px) {
+  .text-summary {
+    margin-top: 22px;
+  }
+}
+/*# sourceMappingURL=step1.css.map */

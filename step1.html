@@ -13,9 +13,17 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/scss/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
   </head>
   <body>
     <header>
@@ -25,69 +33,233 @@
       <div class="logo-desc">Committed to helping seniors since 2012</div>
       <h1>
         Medicare Supplement costs are increasing every year!
-        <span>— take this as a sign to check rates before it really is to late</span>
+        <span
+          >— take this as a sign to check rates before it really is to
+          late</span
+        >
       </h1>
       <cite>
-        <img src="assets/img/lock.png" alt="lock" /> Your privacy is safe and secure.<br />
+        <img src="assets/img/lock.png" alt="lock" /> Your privacy is safe and
+        secure.<br />
         Tuesday, 27, 2021
       </cite>
     </header>
 
     <main class="page page-home">
-      <form id="form" action="step2.html">
+      <form id="form" method="POST" action="step2.html">
         <div class="form-group">
           <div class="row">
             <div class="col-6">
               <label>First Name</label>
-              <input type="text" class="form-control" name="firstName" placeholder="First Name" required />
+              <input
+                type="text"
+                class="form-control"
+                name="firstName"
+                placeholder="First Name"
+                required
+              />
             </div>
             <div class="col-6">
               <label>Last Name</label>
-              <input type="text" class="form-control" name="lastName" placeholder="Last Name" required />
+              <input
+                type="text"
+                class="form-control"
+                name="lastName"
+                placeholder="Last Name"
+                required
+              />
             </div>
           </div>
         </div>
 
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" class="form-control" name="emailAddress" placeholder="Email Address" required />
+          <input
+            type="email"
+            class="form-control"
+            name="emailAddress"
+            placeholder="Email Address"
+            required
+          />
         </div>
 
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" class="form-control" name="phoneNumber" placeholder="Phone Number" required />
+          <input
+            type="tel"
+            class="form-control"
+            name="phone"
+            placeholder="Phone Number"
+            required
+          />
         </div>
-
+        <input
+          id="leadid_token"
+          name="universal_leadid"
+          type="hidden"
+          value=""
+        />
         <div class="button-row">
-          <button class="btn btn-primary">
-            Get started!
+          <button type="submit" id="btn_submit" class="btn btn-primary">
+            Get My Quotes!
             <span class="icon-play"></span>
           </button>
         </div>
 
+        <div class="text-summary">
+          By clicking “Get My Quotes!” and seeking an insurance quote, I provide
+          my signature and expressly consent to receive marketing phone calls
+          and communications via automated telephone dialing system,
+          pre-recorded message, email or by text message from up to five
+          insurance companies or their agents, this website, and partner
+          companies at the land-line or wireless number I have provided. I
+          understand that my signature consent is not a condition of purchase of
+          any goods and services and it can be revoked at any time. Insurance
+          companies or their agents that receive my quote request from this
+          website or its partner companies may confirm my information through
+          the use of a consumer report. I acknowledge that I have read and
+          understand these terms, the terms of this website and agree to them.
+          By completing the contact form above, you will be directed to a
+          licensed sales agent who can answer your questions and provide
+          information about Medicare Advantage, Part D or Medicare supplement
+          insurance plans. Agents are not connected with or endorsed by the U.S.
+          government or the federal Medicare program. One of these parties may
+          handle your health insurance case.
+        </div>
       </form>
-
     </main>
 
     <footer>
       <ul class="nav">
         <li>
-          <a href="https://quickmedigap.com/privacy-policy.html" target="_blank">Privacy Policy</a>
+          <a href="https://quickmedigap.com/privacy-policy.html" target="_blank"
+            >Privacy Policy</a
+          >
         </li>
         <li>
-          <a href="https://quickmedigap.com/terms-of-use.html" target="_blank">Terms of Use</a>
+          <a href="https://quickmedigap.com/terms-of-use.html" target="_blank"
+            >Terms of Use</a
+          >
         </li>
         <li>
-          <a href="https://quickmedigap.com/contact-us.html" target="_blank">Contact Us</a>
+          <a href="https://quickmedigap.com/contact-us.html" target="_blank"
+            >Contact Us</a
+          >
         </li>
       </ul>
     </footer>
     <script type="text/javascript">
-      const urlSearchParams = new URLSearchParams(window.location.search);
-      const params = Object.fromEntries(urlSearchParams.entries());
+      const urlSearchParams = new URLSearchParams(window.location.search)
+      const params = Object.fromEntries(urlSearchParams.entries())
       for (var name in params) {
-        $('#form').append(`<input type="hidden" name="${name}" value="${params[name]}" />`);
+        $('#form').append(
+          `<input type="hidden" name="${name}" value="${params[name]}" />`,
+        )
       }
+
+      $('#form').submit(function (e) {
+        e.preventDefault()
+        e.stopPropagation()
+
+        let arrValues = $(this).serializeArray()
+        let formData = {
+          gender: 'M',
+          month: 9,
+          day: 20,
+          url: 'https://quickmedigap.com',
+          landingUrl: 'https://quickmedigap.com/forms/may-form-1',
+        }
+        for (let item of arrValues) {
+          formData[item.name] = item.value
+        }
+
+        formData.leadId = formData.universal_leadid;
+        formData.trustedFormCertUrl = formData.xxTrustedFormCertUrl;
+        formData.userAgent = navigator.userAgent;
+        formData.medicareType = 'Rubber';
+        formData.tcpaDisclosure = 'jornaya';
+
+        $('#btn_submit').attr('disabled', 'disabled')
+        axios
+          .get('https://penguin.oapi.me/api/services/check-zip-us', {
+            params: { zip: formData.zipcode },
+          })
+          .then((res) => {
+            const { data } = res
+            if (data.valid) {
+              formData.city = data.city
+              formData.state = data.state
+            } else {
+              formData.zipcode = 78703
+              formData.city = 'Austin'
+              formData.state = 'TX'
+            }
+
+            return axios.post(
+              'https://penguin.oapi.me/api/lead/1/submit',
+              formData,
+            )
+          })
+          .then(() => {
+            document.location.href = './final.html'
+          })
+          .catch(() => {
+            alert('Sorry, something is wrong. Try again later')
+          })
+          .finally(() => {
+            $('#btn_submit').removeAttr('disabled')
+          })
+      })
     </script>
+    <script id="LeadiDscript" type="text/javascript">
+      ;(function () {
+        var s = document.createElement('script')
+        s.id = 'LeadiDscript_campaign'
+        s.type = 'text/javascript'
+        s.async = true
+        s.src =
+          '//create.lidstatic.com/campaign/1a72ea9a-e602-297f-f916-02c9c37134bf.js?snippet_version=2'
+        var LeadiDscript = document.getElementById('LeadiDscript')
+        LeadiDscript.parentNode.insertBefore(s, LeadiDscript)
+      })()
+    </script>
+    <noscript
+      ><img
+        src="//create.leadid.com/noscript.gif?lac=a9aa1221-5ee5-fd8e-efa4-4aa75b48dd71&lck=1a72ea9a-e602-297f-f916-02c9c37134bf&snippet_version=2"
+    /></noscript>
+    <script type="text/javascript"></script>
+    <noscript
+      ><img
+        src="//create.leadid.com/noscript.gif?
+lac=a9aa1221-5ee5-fd8e-efa4-4aa75b48dd71&lck=1a72ea9a-e602-
+297f-f916-02c9c37134bf&snippet_version=2"
+    /></noscript>
+    <script type="text/javascript">
+      ;(function () {
+        var field = 'xxTrustedFormCertUrl'
+        var provideReferrer = false
+        var invertFieldSensitivity = false
+        var tf = document.createElement('script')
+        tf.type = 'text/javascript'
+        tf.async = true
+        tf.src =
+          'http' +
+          ('https:' == document.location.protocol ? 's' : '') +
+          '://api.trustedform.com/trustedform.js?provide_referrer=' +
+          escape(provideReferrer) +
+          '&field=' +
+          escape(field) +
+          '&l=' +
+          new Date().getTime() +
+          Math.random() +
+          '&invert_field_sensitivity=' +
+          invertFieldSensitivity
+        var s = document.getElementsByTagName('script')[0]
+        s.parentNode.insertBefore(tf, s)
+      })()
+    </script>
+    <noscript>
+      <img src="http://api.trustedform.com/ns.gif" />
+    </noscript>
   </body>
 </html>
