@@ -12,7 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/scss/styles.css" />
   </head>
   <body>
@@ -23,10 +26,14 @@
       <div class="logo-desc">Committed to helping seniors since 2012</div>
       <h1>
         Medicare Supplement costs are increasing every year!
-        <span>— take this as a sign to check rates before it really is to late</span>
+        <span
+          >— take this as a sign to check rates before it really is to
+          late</span
+        >
       </h1>
       <cite>
-        <img src="/assets/img/lock.png" alt="lock" /> Your privacy is safe and secure.<br />
+        <img src="assets/img/lock.png" alt="lock" /> Your privacy is safe and
+        secure.<br />
         Tuesday, 27, 2021
       </cite>
     </header>
@@ -35,12 +42,29 @@
       <form action="./step1.html">
         <div class="form-group with-number">
           <label>Zip Code</label>
-          <input type="text" class="form-control" name="zipCode" placeholder="Zip Code" />
+          <input
+            type="text"
+            class="form-control"
+            name="zipCode"
+            placeholder="Zip Code"
+            pattern="[0-9]{5}"
+            title="00000"
+            required
+          />
         </div>
 
         <div class="form-group with-number">
           <label>Birth Year</label>
-          <input type="text" class="form-control" name="zipCode" placeholder="Birth Year" />
+          <input
+            type="number"
+            class="form-control"
+            name="birthYear"
+            placeholder="Birth Year"
+            min="1900"
+            max="2010"
+            title="1900-2010"
+            required
+          />
         </div>
 
         <div class="button-row with-number">
@@ -65,8 +89,11 @@
       </form>
 
       <div class="review text-center mx-auto">
-        <p>“Not only did we get a better interest rate, but also a 25-year loan
-          instead of the 30-year, <strong>saving us more than $30,000.00</strong>.”</p>
+        <p>
+          “Not only did we get a better interest rate, but also a 25-year loan
+          instead of the 30-year,
+          <strong>saving us more than $30,000.00</strong>.”
+        </p>
         <div class="rating">
           <i class="icon-rating"></i>
           <i class="icon-rating"></i>
@@ -75,15 +102,17 @@
           <i class="icon-rating"></i>
         </div>
 
-        <div class="author">
-          Susie G.
-        </div>
+        <div class="author">Susie G.</div>
       </div>
 
       <div class="vendors mx-auto">
-        <span><img src="/assets/img/secure_ssl.png" alt="ssl" /> </span>
-        <span class="accredited-business"><img src="/assets/img/accredited_business.png" alt="business" /> </span>
-        <span><img src="/assets/img/norton_lifelock.png" alt="lifelock" /> </span>
+        <span><img src="assets/img/secure_ssl.png" alt="ssl" /> </span>
+        <span class="accredited-business"
+          ><img src="assets/img/accredited_business.png" alt="business" />
+        </span>
+        <span
+          ><img src="assets/img/norton_lifelock.png" alt="lifelock" />
+        </span>
       </div>
     </main>
 

@@ -54,7 +54,7 @@
   display: inline-block;
   width: 24px;
   height: 24px;
-  background: url("/assets/img/star.png") no-repeat center center;
+  background: url("../../img/star.png") no-repeat center center;
 }
 
 .page-home .review .author {
@@ -117,7 +117,7 @@
 }
 
 .page-home .comment-box .arrow {
-  background: url("/assets/img/arrow.svg") no-repeat;
+  background: url("../../img/arrow.svg") no-repeat;
   width: 46px;
   height: 51px;
   position: absolute;
@@ -136,7 +136,7 @@
   .page-home .text-disabled {
     margin-top: 19px;
     padding: 2px 0 2px 15px;
-    background: url("/assets/img/lock.png") no-repeat left 1px;
+    background: url("../../img/lock.png") no-repeat left 1px;
   }
   .page-home .text-disabled strong {
     font-style: normal !important;
@@ -179,7 +179,7 @@
     font-weight: bold;
   }
   .page-home .comment-box .arrow {
-    background: url("/assets/img/arrow-mobile.svg") no-repeat;
+    background: url("../../img/arrow-mobile.svg") no-repeat;
     height: 46px;
     left: initial;
     right: -28px;

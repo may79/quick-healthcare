@@ -22,6 +22,18 @@ p {
   margin: 0;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 button, [role="button"], [type="button"] {
   cursor: pointer;
 }
@@ -257,7 +269,7 @@ header cite img {
   display: inline-block;
   width: 238px;
   height: 27px;
-  background: url("/assets/img/logo.png") no-repeat center center;
+  background: url("../img/logo.png") no-repeat center center;
 }
 
 .logo-desc {
@@ -352,7 +364,7 @@ footer .nav a {
   .logo .logo-img {
     width: 194px;
     height: 30px;
-    background: url("/assets/img/logo-small.png") no-repeat center center;
+    background: url("../img/logo-small.png") no-repeat center center;
   }
   .logo-desc {
     font-size: 10px;
